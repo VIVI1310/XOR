@@ -4,25 +4,15 @@ import numpy
 from numpy import *
 import pandas as pd
 import matplotlib.pyplot as plt
-from array import *
 
 # IMPORT DATA FROM THE DATA SHEET
 data = pd.read_csv('dataset.csv').values
 N, d = data.shape
-x_train = data[:, 0:d - 1].reshape(-1, d - 1) # question "reshape" [N, d- 1]
+x_train = data[:, 0:d - 1].reshape(-1, d - 1) 
 x_train = append(x_train, ones((N, 1)), axis=1)
-y_train = data[:, 2].reshape(-1, 1) # ':' means all the rows [N, 1]
+y_train = data[:, 2].reshape(-1, 1) 
+print(y_train)
 
-# VISUALIZE THE DATA
-"""
-x1 = x_train[0:10, 0]
-x2 = x_train[0:10, 1]
-x3 = x_train[10:20, 0]
-x4 = x_train[10:20, 1]
-plt.scatter(x1, x2, color = "red")
-plt.scatter(x3, x4, color = "blue")
-plt.show()
-"""
 # TRAIN THE MODEL
 
 #Initialize parameters
@@ -61,4 +51,4 @@ example = [2, 2, 1]
 print("Lương ", example[0], "tr")
 print("thời gian làm việc:", example[1], "năm")
 print("Cho vay: ")
-print(predict(w, example))
+# print(predict(w, example))
